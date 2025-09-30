@@ -484,7 +484,8 @@ class QRScanner : CDVPlugin, AVCaptureMetadataOutputObjectsDelegate {
     }
     
     @objc func openSettings(_ command: CDVInvokedUrlCommand) {
-        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+        // A constante correta não tem "UIApplication." no começo
+        guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
             self.sendErrorCode(command: command, error: QRScannerError.open_settings_unavailable)
             return
         }
