@@ -498,7 +498,7 @@ class QRScanner : CDVPlugin, AVCaptureMetadataOutputObjectsDelegate {
             }
         } else {
             // Pre iOS 10.0
-            if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
+            if let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) {
                 UIApplication.shared.openURL(settingsUrl)
                 self.getStatus(command)
             } else {
@@ -506,6 +506,5 @@ class QRScanner : CDVPlugin, AVCaptureMetadataOutputObjectsDelegate {
             }
         }
     }
-
 
 }
